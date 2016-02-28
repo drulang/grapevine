@@ -12,6 +12,9 @@
 		71F98F161C83955600FE106B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F151C83955600FE106B /* ViewController.m */; };
 		71F98F1B1C83955600FE106B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1A1C83955600FE106B /* Assets.xcassets */; };
 		71F98F1E1C83955600FE106B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1C1C83955600FE106B /* LaunchScreen.storyboard */; };
+		71F98F2A1C83971E00FE106B /* GVPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F291C83971E00FE106B /* GVPost.m */; };
+		71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F2C1C83973D00FE106B /* GVTabBarController.m */; };
+		71F98F301C83976D00FE106B /* GVActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F2F1C83976D00FE106B /* GVActivityFeedViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,12 @@
 		71F98F1A1C83955600FE106B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71F98F1D1C83955600FE106B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71F98F1F1C83955600FE106B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71F98F281C83971E00FE106B /* GVPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVPost.h; sourceTree = "<group>"; };
+		71F98F291C83971E00FE106B /* GVPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVPost.m; sourceTree = "<group>"; };
+		71F98F2B1C83973D00FE106B /* GVTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVTabBarController.h; sourceTree = "<group>"; };
+		71F98F2C1C83973D00FE106B /* GVTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVTabBarController.m; sourceTree = "<group>"; };
+		71F98F2E1C83976D00FE106B /* GVActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVActivityFeedViewController.h; sourceTree = "<group>"; };
+		71F98F2F1C83976D00FE106B /* GVActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVActivityFeedViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +65,9 @@
 		71F98F0D1C83955600FE106B /* GrapeVine */ = {
 			isa = PBXGroup;
 			children = (
+				71F98F271C8396F200FE106B /* Model */,
+				71F98F261C8396EC00FE106B /* View */,
+				71F98F251C8396E400FE106B /* Controllers */,
 				71F98F141C83955600FE106B /* ViewController.h */,
 				71F98F151C83955600FE106B /* ViewController.m */,
 				71F98F1A1C83955600FE106B /* Assets.xcassets */,
@@ -74,6 +86,33 @@
 				71F98F0F1C83955600FE106B /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		71F98F251C8396E400FE106B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				71F98F2B1C83973D00FE106B /* GVTabBarController.h */,
+				71F98F2C1C83973D00FE106B /* GVTabBarController.m */,
+				71F98F2E1C83976D00FE106B /* GVActivityFeedViewController.h */,
+				71F98F2F1C83976D00FE106B /* GVActivityFeedViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		71F98F261C8396EC00FE106B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		71F98F271C8396F200FE106B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71F98F281C83971E00FE106B /* GVPost.h */,
+				71F98F291C83971E00FE106B /* GVPost.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,8 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */,
 				71F98F161C83955600FE106B /* ViewController.m in Sources */,
+				71F98F301C83976D00FE106B /* GVActivityFeedViewController.m in Sources */,
 				71F98F131C83955600FE106B /* AppDelegate.m in Sources */,
+				71F98F2A1C83971E00FE106B /* GVPost.m in Sources */,
 				71F98F101C83955600FE106B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
