@@ -21,6 +21,7 @@
 @interface GVActivityFeedViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic)UICollectionView *collectionView;
+@property (nonatomic)NSArray <GVPost *> *posts;
 
 @end
 
@@ -34,8 +35,10 @@
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+        layout.itemSize = CGSizeMake(self.view.frame.size.width, 350);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
+        _collectionView.translatesAutoresizingMaskIntoConstraints = NO;
         _collectionView.backgroundColor = [UIColor clearColor];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
@@ -45,12 +48,23 @@
     return _collectionView;
 }
 
+- (NSArray <GVPost *> *)posts {
+    if (!_posts) {
+        _posts = [[GVBackendService sharedService] activityFeed];
+    }
+    return _posts;
+}
+
 #pragma mark Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     [self.view addSubview:self.collectionView];
+    
+    [self setupConstraints];
 }
 
 #pragma mark Helpers
@@ -65,5 +79,21 @@
 }
 
 #pragma mark UICollectionViewDelegate/UICollectionViewDataSource
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.posts.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    GVPostCollectionViewCell *cell = (GVPostCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:GVPostCollectionViewCellIdentifier forIndexPath:indexPath];
+    
+    cell.backgroundColor = [UIColor greenColor];
+    
+    return cell;
+}
 
 @end

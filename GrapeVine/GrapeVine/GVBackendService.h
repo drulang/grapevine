@@ -12,6 +12,8 @@
 
 @interface GVBackendService : NSObject
 
++ (instancetype)sharedService;
+
 - (NSArray <GVPost *> *)activityFeed;
 
 @end

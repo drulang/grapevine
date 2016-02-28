@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface GVPostCollectionViewCell : UICollectionViewCell
+static NSString *GVPostCollectionViewCellIdentifier = @"GV Post Cell";
 
-static NSString * GVPostCollectionViewCellIdentifier = @"GV Post Cell";
+
+@interface GVPostCollectionViewCell : UICollectionViewCell
 
 @end

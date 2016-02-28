@@ -6,6 +6,9 @@
 //  Copyright © 2016 Dru Lang. All rights reserved.
 //
 
+#import "GVActivityFeedViewController.h"
+#import "GVTabBarController.h"
+
 #import "AppDelegate.h"
 
 @interface AppDelegate ()
@@ -20,9 +23,8 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    UIViewController *viewController = [[UIViewController alloc] init];
-    viewController.view.backgroundColor = [UIColor greenColor];
-    
+    GVActivityFeedViewController *viewController = [[GVActivityFeedViewController alloc] init];
+
     self.window.rootViewController = viewController;
     [self.window makeKeyAndVisible];
     

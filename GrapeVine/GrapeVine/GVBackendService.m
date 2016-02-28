@@ -10,6 +10,20 @@
 
 @implementation GVBackendService
 
+static GVBackendService *service = nil;
+
+#pragma mark Singleton/Constructors
+
++ (instancetype)sharedService {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        service = [[self alloc] init];
+    });
+    return service;
+}
+
+#pragma mark Public Methods
+
 - (NSArray <GVPost *> *)activityFeed {
     GVPost *post1 = [GVPost postWithVideoURL:[NSURL fileURLWithPath:@"gv_1"] title:@"Collab" postText:@"Love this"];
     GVPost *post2 = [GVPost postWithVideoURL:[NSURL fileURLWithPath:@"gv_2"] title:@"Control" postText:nil];
