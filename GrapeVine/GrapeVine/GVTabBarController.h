@@ -10,4 +10,6 @@
 
 @interface GVTabBarController : UIViewController
 
+@property (nonatomic) NSArray <UIViewController *> *viewControllers;
+
 @end
