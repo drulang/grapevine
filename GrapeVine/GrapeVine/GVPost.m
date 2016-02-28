@@ -10,4 +10,12 @@
 
 @implementation GVPost
 
++ (instancetype)postWithVideoURL:(NSURL *)videoURL title:(NSString *)title postText:(NSString *)postText {
+    GVPost *post = [GVPost new];
+    post.videoURL = videoURL;
+    post.title = title;
+    post.postText = postText;
+    return post;
+}
+
 @end
