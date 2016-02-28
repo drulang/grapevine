@@ -19,6 +19,7 @@
 		71F98F381C83990B00FE106B /* gv_2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F361C83990B00FE106B /* gv_2.mp4 */; };
 		71F98F391C83990B00FE106B /* gv_1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F371C83990B00FE106B /* gv_1.mp4 */; };
 		71F98F3B1C839B5200FE106B /* gv_3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F3A1C839B5200FE106B /* gv_3.mp4 */; };
+		71F98F3E1C839C0700FE106B /* GVPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F3D1C839C0700FE106B /* GVPostCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,8 @@
 		71F98F361C83990B00FE106B /* gv_2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = gv_2.mp4; sourceTree = "<group>"; };
 		71F98F371C83990B00FE106B /* gv_1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = gv_1.mp4; sourceTree = "<group>"; };
 		71F98F3A1C839B5200FE106B /* gv_3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = gv_3.mp4; sourceTree = "<group>"; };
+		71F98F3C1C839C0700FE106B /* GVPostCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVPostCollectionViewCell.h; sourceTree = "<group>"; };
+		71F98F3D1C839C0700FE106B /* GVPostCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVPostCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 		71F98F261C8396EC00FE106B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71F98F3C1C839C0700FE106B /* GVPostCollectionViewCell.h */,
+				71F98F3D1C839C0700FE106B /* GVPostCollectionViewCell.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -224,6 +229,7 @@
 				71F98F351C8398F600FE106B /* GVBackendService.m in Sources */,
 				71F98F2A1C83971E00FE106B /* GVPost.m in Sources */,
 				71F98F101C83955600FE106B /* main.m in Sources */,
+				71F98F3E1C839C0700FE106B /* GVPostCollectionViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
