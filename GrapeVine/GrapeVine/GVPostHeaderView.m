@@ -1,8 +1,8 @@
 //
-//  GVPostCollectionViewCell.m
+//  GVPostHeaderView.m
 //  GrapeVine
 //
-//  Created by Dru Lang on 2/28/16.
+//  Created by Dru Lang on 3/5/16.
 //  Copyright © 2016 Dru Lang. All rights reserved.
 //
 
@@ -10,22 +10,19 @@
 
 #import "GVPostHeaderView.h"
 
-#import "GVPostCollectionViewCell.h"
-
 //_______________________________________________________________________________________________________________
 // Class Interface
 
-@interface GVPostCollectionViewCell ()
-
-@property (nonatomic)AVPlayerLayer *playerLayer;
+@interface GVPostHeaderView ()
 
 @end
-
 
 //_______________________________________________________________________________________________________________
 // Class Implementation
 
-@implementation GVPostCollectionViewCell
+@implementation GVPostHeaderView
+
+#pragma mark Properties
 
 #pragma mark Constructors
 
@@ -33,16 +30,16 @@
     self = [super initWithFrame:frame];
     
     if (self) {
-        [self.contentView.layer addSublayer:self.playerLayer];
+        [self addSubview:self.imageView];
+        [self addSubview:self.titleLabel];
+        [self addSubview:self.subtitleLabel];
+        [self addSubview:self.infoSubtitleLabel];
+        [self addSubview:self.infoSubtitleLabel];
     }
     
     return self;
 }
 
-#pragma mark Helpers
-
-- (void)setupConstraints {
-    
-}
+#pragma mark AL Overrides
 
 @end
