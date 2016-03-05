@@ -10,6 +10,8 @@
 		1A85DF5779358CE23C5F4B03 /* libPods-GrapeVine.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8882D3742D9983B4EF92286E /* libPods-GrapeVine.a */; };
 		71D832C81C8B38720030808B /* GVPostHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832C71C8B38720030808B /* GVPostHeaderView.m */; };
 		71D832CD1C8B94A20030808B /* UIView+Util.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832CC1C8B94A20030808B /* UIView+Util.m */; };
+		71D832D01C8B9B2C0030808B /* GVPostFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832CF1C8B9B2C0030808B /* GVPostFooterView.m */; };
+		71D832D31C8B9BE90030808B /* GVActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D21C8B9BE90030808B /* GVActionView.m */; };
 		71F98F101C83955600FE106B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F0F1C83955600FE106B /* main.m */; };
 		71F98F131C83955600FE106B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F121C83955600FE106B /* AppDelegate.m */; };
 		71F98F161C83955600FE106B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F151C83955600FE106B /* ViewController.m */; };
@@ -30,6 +32,10 @@
 		71D832C71C8B38720030808B /* GVPostHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVPostHeaderView.m; sourceTree = "<group>"; };
 		71D832CB1C8B94A20030808B /* UIView+Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Util.h"; sourceTree = "<group>"; };
 		71D832CC1C8B94A20030808B /* UIView+Util.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Util.m"; sourceTree = "<group>"; };
+		71D832CE1C8B9B2C0030808B /* GVPostFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVPostFooterView.h; sourceTree = "<group>"; };
+		71D832CF1C8B9B2C0030808B /* GVPostFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVPostFooterView.m; sourceTree = "<group>"; };
+		71D832D11C8B9BE90030808B /* GVActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVActionView.h; sourceTree = "<group>"; };
+		71D832D21C8B9BE90030808B /* GVActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVActionView.m; sourceTree = "<group>"; };
 		71F98F0B1C83955600FE106B /* GrapeVine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeVine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F98F0F1C83955600FE106B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71F98F111C83955600FE106B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +90,8 @@
 				71F98F3D1C839C0700FE106B /* GVPostCollectionViewCell.m */,
 				71D832C61C8B38720030808B /* GVPostHeaderView.h */,
 				71D832C71C8B38720030808B /* GVPostHeaderView.m */,
+				71D832CE1C8B9B2C0030808B /* GVPostFooterView.h */,
+				71D832CF1C8B9B2C0030808B /* GVPostFooterView.m */,
 			);
 			name = "Post Cell";
 			sourceTree = "<group>";
@@ -159,6 +167,8 @@
 			isa = PBXGroup;
 			children = (
 				71D832C51C8B38550030808B /* Post Cell */,
+				71D832D11C8B9BE90030808B /* GVActionView.h */,
+				71D832D21C8B9BE90030808B /* GVActionView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -326,6 +336,7 @@
 				71D832CD1C8B94A20030808B /* UIView+Util.m in Sources */,
 				71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */,
 				71F98F161C83955600FE106B /* ViewController.m in Sources */,
+				71D832D01C8B9B2C0030808B /* GVPostFooterView.m in Sources */,
 				71F98F301C83976D00FE106B /* GVActivityFeedViewController.m in Sources */,
 				71F98F131C83955600FE106B /* AppDelegate.m in Sources */,
 				71F98F351C8398F600FE106B /* GVBackendService.m in Sources */,
@@ -333,6 +344,7 @@
 				71F98F2A1C83971E00FE106B /* GVPost.m in Sources */,
 				71F98F101C83955600FE106B /* main.m in Sources */,
 				71F98F3E1C839C0700FE106B /* GVPostCollectionViewCell.m in Sources */,
+				71D832D31C8B9BE90030808B /* GVActionView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
