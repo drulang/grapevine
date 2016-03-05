@@ -368,6 +368,7 @@
 				71F98F241C83955600FE106B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -14,14 +14,6 @@
 @property (nonatomic)NSString *title;
 @property (nonatomic)NSString *postText;
 
-@property (nonatomic)NSString *username;
-
-@property (nonatomic)NSNumber *loopCount;
-@property (nonatomic)NSNumber *likeCount;
-@property (nonatomic)NSNumber *repostCount;
-@property (nonatomic)NSNumber *linkCount;
-
 + (instancetype)postWithVideoURL:(NSURL *)videoURL title:(NSString *)title postText:(NSString *)postText;
-
 
 @end
