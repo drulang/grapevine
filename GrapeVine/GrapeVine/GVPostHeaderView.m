@@ -30,9 +30,9 @@
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@""]];
-        _imageView.backgroundColor = [UIColor yellowColor];
+        _imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"user_1"]];
         _imageView.translatesAutoresizingMaskIntoConstraints = NO;
+        _imageView.clipsToBounds = YES;
     }
     return _imageView;
 }
@@ -91,12 +91,22 @@
     return self;
 }
 
+#pragma mark Extensions
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
+
+    self.imageView.layer.cornerRadius = self.imageView.frame.size.height / 2.0;
+}
+
 #pragma mark AL Overrides
 
 - (void)updateConstraints {
     
     if (!_contraintsAdded) {
-        [self.imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(10, 10, 10, 10) excludingEdge:ALEdgeRight];
+        int imageViewInset = 5;
+        
+        [self.imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(imageViewInset, imageViewInset, imageViewInset, imageViewInset) excludingEdge:ALEdgeRight];
         [self.imageView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionHeight ofView:self.imageView];
         
         [self.titleLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.imageView withOffset:8];
