@@ -40,7 +40,8 @@
 - (GVActionView *)action1View {
     if (!_action1View) {
         _action1View = [GVActionView autolayoutView];
-        _action1View.backgroundColor = [UIColor greenColor];
+        UIImage *image = [[UIImage imageNamed:@"icon_heart"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [_action1View.actionButton setImage:image forState:UIControlStateNormal];
     }
     
     return _action1View;
@@ -49,7 +50,8 @@
 - (GVActionView *)action2View {
     if (!_action2View) {
         _action2View = [GVActionView autolayoutView];
-        _action2View.backgroundColor = [UIColor greenColor];
+        UIImage *image = [[UIImage imageNamed:@"icon_message"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [_action2View.actionButton setImage:image forState:UIControlStateNormal];
     }
     
     return _action2View;
@@ -58,7 +60,8 @@
 - (GVActionView *)action3View {
     if (!_action3View) {
         _action3View = [GVActionView autolayoutView];
-        _action3View.backgroundColor = [UIColor greenColor];
+        UIImage *image = [[UIImage imageNamed:@"icon_external_link"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+        [_action3View.actionButton setImage:image forState:UIControlStateNormal];
     }
     
     return _action3View;
@@ -109,12 +112,15 @@
         
         [self.action1View autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.descriptionLabel];
         [self.action1View autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.descriptionActionButton withOffset:12];
+        [self.action1View autoSetDimension:ALDimensionHeight toSize:20];
         
         [self.action2View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action1View withOffset:defaultPadding];
         [self.action2View autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
+        [self.action2View autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.action1View];
         
         [self.action3View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action2View withOffset:defaultPadding];
         [self.action3View autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
+        [self.action3View autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.action1View];
         
         [self.additionalActionsButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:defaultPadding];
         [self.additionalActionsButton autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
