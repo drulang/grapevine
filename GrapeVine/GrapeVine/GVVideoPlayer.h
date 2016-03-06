@@ -8,9 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSInteger, GVVideoPlayerStatus) {
+    GVVideoPlayerPlaying,
+    GVVideoPlayerPaused,
+};
+
+//_______________________________________________________________________________________________________________
+// Class Interface
+
 @interface GVVideoPlayer : UIView
 
-- (void)playVideo:(NSURL *)videoURL;
+@property (nonatomic)NSURL *videoURL;
+@property (nonatomic, readonly)GVVideoPlayerStatus status;
 
 - (void)play;
 - (void)pause;

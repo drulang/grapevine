@@ -13,6 +13,7 @@
 		71D832D01C8B9B2C0030808B /* GVPostFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832CF1C8B9B2C0030808B /* GVPostFooterView.m */; };
 		71D832D31C8B9BE90030808B /* GVActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D21C8B9BE90030808B /* GVActionView.m */; };
 		71D832D61C8C76130030808B /* GVVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D51C8C76130030808B /* GVVideoPlayer.m */; };
+		71D832DA1C8C87C50030808B /* GVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D91C8C87C50030808B /* GVUtil.m */; };
 		71F98F101C83955600FE106B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F0F1C83955600FE106B /* main.m */; };
 		71F98F131C83955600FE106B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F121C83955600FE106B /* AppDelegate.m */; };
 		71F98F161C83955600FE106B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F151C83955600FE106B /* ViewController.m */; };
@@ -39,6 +40,8 @@
 		71D832D21C8B9BE90030808B /* GVActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVActionView.m; sourceTree = "<group>"; };
 		71D832D41C8C76130030808B /* GVVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVVideoPlayer.h; sourceTree = "<group>"; };
 		71D832D51C8C76130030808B /* GVVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVVideoPlayer.m; sourceTree = "<group>"; };
+		71D832D81C8C87C50030808B /* GVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUtil.h; sourceTree = "<group>"; };
+		71D832D91C8C87C50030808B /* GVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUtil.m; sourceTree = "<group>"; };
 		71F98F0B1C83955600FE106B /* GrapeVine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeVine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F98F0F1C83955600FE106B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71F98F111C83955600FE106B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,6 +111,15 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
+		71D832D71C8C87BB0030808B /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				71D832D81C8C87C50030808B /* GVUtil.h */,
+				71D832D91C8C87C50030808B /* GVUtil.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
 		71F98F021C83955600FE106B = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +141,7 @@
 		71F98F0D1C83955600FE106B /* GrapeVine */ = {
 			isa = PBXGroup;
 			children = (
+				71D832D71C8C87BB0030808B /* Misc */,
 				71D832C91C8B94780030808B /* Categories */,
 				71F98F321C8398E000FE106B /* Service */,
 				71F98F271C8396F200FE106B /* Model */,
@@ -348,6 +361,7 @@
 				71F98F351C8398F600FE106B /* GVBackendService.m in Sources */,
 				71D832C81C8B38720030808B /* GVPostHeaderView.m in Sources */,
 				71F98F2A1C83971E00FE106B /* GVPost.m in Sources */,
+				71D832DA1C8C87C50030808B /* GVUtil.m in Sources */,
 				71F98F101C83955600FE106B /* main.m in Sources */,
 				71F98F3E1C839C0700FE106B /* GVPostCollectionViewCell.m in Sources */,
 				71D832D31C8B9BE90030808B /* GVActionView.m in Sources */,

@@ -15,9 +15,9 @@
 
 @interface GVVideoPlayer ()
 
+@property (nonatomic, readwrite)GVVideoPlayerStatus status;
 @property (nonatomic)AVQueuePlayer *player;
 @property (nonatomic)AVPlayerLayer *playerLayer;
-@property (nonatomic)NSURL *videoURL;
 @property (nonatomic)AVPlayerItem *videoItem;
 
 @end
@@ -48,12 +48,20 @@
     return [[AVPlayerItem alloc] initWithURL:self.videoURL];
 }
 
+- (void)setVideoURL:(NSURL *)videoURL {
+    [self.player removeAllItems];
+    _videoURL = videoURL;
+    [self.player insertItem:self.videoItem afterItem:nil];
+}
+
 #pragma mark Constructors
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     
     if (self) {
+        self.status = GVVideoPlayerPaused;
+    
         [self.layer addSublayer:self.playerLayer];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
@@ -78,20 +86,14 @@
 
 #pragma mark Public Methods
 
-- (void)playVideo:(NSURL *)videoURL {
-    [self.player removeAllItems];
-    
-    self.videoURL = videoURL;
-    
-    [self.player insertItem:self.videoItem afterItem:nil];
-    [self.player play];
-}
 
 - (void)play {
+    self.status = GVVideoPlayerPlaying;
     [self.player play];
 }
 
 - (void)pause {
+    self.status = GVVideoPlayerPaused;
     [self.player pause];
 }
 

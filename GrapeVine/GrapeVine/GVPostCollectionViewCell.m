@@ -41,11 +41,6 @@
 - (GVVideoPlayer *)videoPlayer {
     if (!_videoPlayer) {
         _videoPlayer = [GVVideoPlayer autolayoutView];
-
-        NSString *filename = [NSString stringWithFormat:@"/gv_1.mp4"];
-        NSString *urlString = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:filename];
-        NSURL *url = [NSURL fileURLWithPath:urlString];
-        [_videoPlayer playVideo:url];
     }
     return _videoPlayer;
 }

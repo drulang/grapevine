@@ -6,6 +6,8 @@
 //  Copyright © 2016 Dru Lang. All rights reserved.
 //
 
+#import "GVUtil.h"
+
 #import "GVBackendService.h"
 
 @implementation GVBackendService
@@ -25,9 +27,10 @@ static GVBackendService *service = nil;
 #pragma mark Public Methods
 
 - (NSArray <GVPost *> *)activityFeed {
-    GVPost *post1 = [GVPost postWithVideoURL:[NSURL fileURLWithPath:@"gv_1"] title:@"Collab" postText:@"Love this"];
-    GVPost *post2 = [GVPost postWithVideoURL:[NSURL fileURLWithPath:@"gv_2"] title:@"Control" postText:nil];
-    GVPost *post3 = [GVPost postWithVideoURL:[NSURL URLWithString:@"gv_3"] title:@"Alwyas No. 2" postText:nil];
+
+    GVPost *post1 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_1.mp4"] title:@"Collab" postText:@"Love this"];
+    GVPost *post2 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_2.mp4"] title:@"Control" postText:nil];
+    GVPost *post3 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_3.mp4"] title:@"Alwyas No. 2" postText:nil];
     
     return @[
              post1,

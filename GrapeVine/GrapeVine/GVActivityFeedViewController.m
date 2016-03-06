@@ -91,9 +91,55 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     GVPostCollectionViewCell *cell = (GVPostCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:GVPostCollectionViewCellIdentifier forIndexPath:indexPath];
     
+    GVPost *post = [self.posts objectAtIndex:indexPath.row];
+    cell.videoPlayer.videoURL = post.videoURL;
+    
     cell.backgroundColor = [UIColor greenColor];
     
     return cell;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    NSArray *visibleCells = [self.collectionView visibleCells];
+    
+    GVPostCollectionViewCell *cellToActivate;
+    GVPostCollectionViewCell *cellToDeactivate;
+    
+    for (UICollectionViewCell *cell in visibleCells) {
+        if (!cellToActivate) {
+            cellToActivate = (GVPostCollectionViewCell *)cell;
+        } else {
+            // cellToActive is always the top most cell
+            GVPostCollectionViewCell *cell1 = cellToActivate;
+            NSIndexPath *cell1_indexPath = [self.collectionView indexPathForCell:cell1];
+            CGRect cell1_frame = [self.collectionView layoutAttributesForItemAtIndexPath:cell1_indexPath].frame;
+
+            GVPostCollectionViewCell *cell2 = cell;
+            NSIndexPath *cell2_indexPath = [self.collectionView indexPathForCell:cell2];
+            CGRect cell2_frame = [self.collectionView layoutAttributesForItemAtIndexPath:cell2_indexPath].frame;
+            
+            // Cell frames in controller frames
+            CGRect cell1_frameInSuperview = [self.collectionView convertRect:cell1_frame toView:[self.collectionView superview]];
+            CGRect cell2_frameInSuperview = [self.collectionView convertRect:cell2_frame toView:[self.collectionView superview]];
+
+            // Calculate which cell has the most real estate on screen
+            CGFloat cell1_visibleAmount = cell1_frameInSuperview.size.height - ABS(cell1_frameInSuperview.origin.y);
+            CGFloat cell2_visibleAmount = cell2_frameInSuperview.size.height - ABS(cell2_frameInSuperview.origin.y);
+            
+            if (cell1_visibleAmount > cell2_visibleAmount) {
+                cellToActivate = cell1;
+                cellToDeactivate = cell2;
+            } else {
+                cellToActivate = cell2;
+                cellToDeactivate = cell1;
+            }
+        }
+    }
+    
+    if (cellToActivate && cellToActivate.videoPlayer.status != GVVideoPlayerPlaying) {
+        [cellToActivate.videoPlayer play];
+    }
+    [cellToDeactivate.videoPlayer pause];
 }
 
 @end
