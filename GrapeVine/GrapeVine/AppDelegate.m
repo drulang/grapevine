@@ -24,8 +24,22 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     GVActivityFeedViewController *viewController = [[GVActivityFeedViewController alloc] init];
+    UIViewController *vc2 = [UIViewController new];
+    vc2.view.backgroundColor = [UIColor greenColor];
+    UIViewController *vc3 = [UIViewController new];
+    vc3.view.backgroundColor = [UIColor greenColor];
+    UIViewController *vc4 = [UIViewController new];
+    vc4.view.backgroundColor = [UIColor greenColor];
 
-    self.window.rootViewController = viewController;
+    GVTabBarController *tabBarController = [[GVTabBarController alloc] init];
+    tabBarController.viewControllers = @[
+                                         viewController,
+                                         vc2,
+                                         vc3,
+                                         vc4,
+                                         ];
+    
+    self.window.rootViewController = tabBarController;
     [self.window makeKeyAndVisible];
     
     

@@ -11,5 +11,7 @@
 @interface GVTabBarController : UIViewController
 
 @property (nonatomic) NSArray <UIViewController *> *viewControllers;
+@property (nonatomic)NSInteger selectedIndex;
+@property (nonatomic, readonly)UIView *tabBarView;
 
 @end

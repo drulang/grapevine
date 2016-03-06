@@ -35,7 +35,7 @@
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.itemSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height - 60);
+        layout.itemSize = CGSizeMake(self.view.frame.size.width, self.view.frame.size.height - 85);
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.translatesAutoresizingMaskIntoConstraints = NO;

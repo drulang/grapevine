@@ -16,7 +16,6 @@
 		71D832DA1C8C87C50030808B /* GVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D91C8C87C50030808B /* GVUtil.m */; };
 		71F98F101C83955600FE106B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F0F1C83955600FE106B /* main.m */; };
 		71F98F131C83955600FE106B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F121C83955600FE106B /* AppDelegate.m */; };
-		71F98F161C83955600FE106B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F151C83955600FE106B /* ViewController.m */; };
 		71F98F1B1C83955600FE106B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1A1C83955600FE106B /* Assets.xcassets */; };
 		71F98F1E1C83955600FE106B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1C1C83955600FE106B /* LaunchScreen.storyboard */; };
 		71F98F2A1C83971E00FE106B /* GVPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F291C83971E00FE106B /* GVPost.m */; };
@@ -46,8 +45,6 @@
 		71F98F0F1C83955600FE106B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71F98F111C83955600FE106B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		71F98F121C83955600FE106B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		71F98F141C83955600FE106B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		71F98F151C83955600FE106B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		71F98F1A1C83955600FE106B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71F98F1D1C83955600FE106B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71F98F1F1C83955600FE106B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -147,8 +144,6 @@
 				71F98F271C8396F200FE106B /* Model */,
 				71F98F261C8396EC00FE106B /* View */,
 				71F98F251C8396E400FE106B /* Controllers */,
-				71F98F141C83955600FE106B /* ViewController.h */,
-				71F98F151C83955600FE106B /* ViewController.m */,
 				71F98F1A1C83955600FE106B /* Assets.xcassets */,
 				71F98F0E1C83955600FE106B /* Supporting Files */,
 			);
@@ -354,7 +349,6 @@
 				71D832D61C8C76130030808B /* GVVideoPlayer.m in Sources */,
 				71D832CD1C8B94A20030808B /* UIView+Util.m in Sources */,
 				71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */,
-				71F98F161C83955600FE106B /* ViewController.m in Sources */,
 				71D832D01C8B9B2C0030808B /* GVPostFooterView.m in Sources */,
 				71F98F301C83976D00FE106B /* GVActivityFeedViewController.m in Sources */,
 				71F98F131C83955600FE106B /* AppDelegate.m in Sources */,
