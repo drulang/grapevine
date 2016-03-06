@@ -81,7 +81,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    self.playerLayer.frame = self.frame;
+    self.playerLayer.frame = self.bounds;
 }
 
 #pragma mark Public Methods
