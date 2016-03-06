@@ -77,7 +77,7 @@
         [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.videoPlayer autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.headerView];
-        [self.videoPlayer autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeHeight ofView:self.contentView withMultiplier:.65];
+        [self.videoPlayer autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeWidth ofView:self.contentView withMultiplier:1];
         
         _constraintsAdded = YES;
     }

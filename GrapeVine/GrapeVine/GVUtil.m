@@ -11,7 +11,7 @@
 @implementation GVUtil
 
 + (NSURL *)videoUrlForVideoName:(NSString *)videoName {
-    NSString *filename = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:@"/gv_1.mp4"];
+    NSString *filename = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:videoName];
     return [NSURL fileURLWithPath:filename];
 }
 
