@@ -33,7 +33,6 @@
 - (GVPostHeaderView *)headerView {
     if (!_headerView) {
         _headerView = [GVPostHeaderView autolayoutView];
-        _headerView.backgroundColor = [UIColor lightGrayColor];
     }
     return _headerView;
 }
@@ -48,7 +47,6 @@
 - (GVPostFooterView *)footerView {
     if (!_footerView) {
         _footerView = [GVPostFooterView autolayoutView];
-        _footerView.backgroundColor = [UIColor lightGrayColor];
     }
     return _footerView;
 }
@@ -59,6 +57,8 @@
     self = [super initWithFrame:frame];
     
     if (self) {
+        self.backgroundColor =[UIColor whiteColor];
+
         [self.contentView addSubview:self.headerView];
         [self.contentView addSubview:self.videoPlayer];
         [self.contentView addSubview:self.footerView];

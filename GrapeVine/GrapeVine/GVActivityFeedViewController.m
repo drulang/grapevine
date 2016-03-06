@@ -60,7 +60,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor colorWithRed:232/255.0 green:232/255.0 blue:232/255.0 alpha:1];
     
     [self.view addSubview:self.collectionView];
     
@@ -94,8 +94,6 @@
     
     GVPost *post = [self.posts objectAtIndex:indexPath.row];
     cell.videoPlayer.videoURL = post.videoURL;
-    
-    cell.backgroundColor = [UIColor greenColor];
     
     return cell;
 }
