@@ -7,8 +7,10 @@
 //
 
 #import "PureLayout.h"
+#import "UIView+Util.h"
 
 #import "GVPostHeaderView.h"
+#import "GVPostFooterView.h"
 
 #import "GVPostCollectionViewCell.h"
 
@@ -20,6 +22,8 @@
 }
 
 @property (nonatomic)GVPostHeaderView *headerView;
+@property (nonatomic)GVPostFooterView *footerView;
+
 @property (nonatomic)AVPlayerLayer *playerLayer;
 
 @end
@@ -34,11 +38,18 @@
 
 - (GVPostHeaderView *)headerView {
     if (!_headerView) {
-        _headerView = [GVPostHeaderView new];
-        _headerView.translatesAutoresizingMaskIntoConstraints = NO;
+        _headerView = [GVPostHeaderView autolayoutView];
         _headerView.backgroundColor = [UIColor lightGrayColor];
     }
     return _headerView;
+}
+
+- (GVPostFooterView *)footerView {
+    if (!_footerView) {
+        _footerView = [GVPostFooterView autolayoutView];
+        _footerView.backgroundColor = [UIColor lightGrayColor];
+    }
+    return _footerView;
 }
 
 #pragma mark Constructors
@@ -48,6 +59,7 @@
     
     if (self) {
         [self.contentView addSubview:self.headerView];
+        [self.contentView addSubview:self.footerView];
     }
     
     return self;
@@ -59,6 +71,8 @@
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.headerView autoSetDimension:ALDimensionHeight toSize:50];
+        
+        
         
         _constraintsAdded = YES;
     }
