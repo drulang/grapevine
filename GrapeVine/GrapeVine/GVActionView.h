@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-static CGFloat GVActionViewPreferredHeight = 25;
+static CGFloat GVActionViewPreferredHeight = 20;
 
 @interface GVActionView : UIView
 

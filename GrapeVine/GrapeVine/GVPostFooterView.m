@@ -21,7 +21,7 @@
     if (!_descriptionLabel) {
         _descriptionLabel = [UILabel autolayoutView];
         _descriptionLabel.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500";
-        _descriptionLabel.font = [UIFont systemFontOfSize:14];
+        _descriptionLabel.font = [UIFont systemFontOfSize:12];
         _descriptionLabel.numberOfLines = 0;
     }
     return _descriptionLabel;
@@ -104,7 +104,7 @@
 
 - (void)updateConstraints {
     if (!_constraintsAdded) {
-        CGFloat defaultPadding = 8;
+        CGFloat defaultPadding = 9;
         CGFloat defaultActionViewPadding = 16;
         
         [self.descriptionLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(defaultPadding, defaultPadding, 0, defaultPadding) excludingEdge:ALEdgeBottom];
