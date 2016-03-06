@@ -14,6 +14,7 @@
 
 @property (nonatomic)UILabel *descriptionLabel;
 
+@property (nonatomic)UIButton *descriptionActionButton;
 @property (nonatomic)GVActionView *action1View;
 @property (nonatomic)GVActionView *action2View;
 @property (nonatomic)GVActionView *action3View;

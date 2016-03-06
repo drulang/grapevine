@@ -10,4 +10,8 @@
 
 @implementation GVActionView
 
+- (CGSize)intrinsicContentSize {
+    return CGSizeMake(50, 20);
+}
+
 @end
