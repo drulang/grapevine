@@ -28,7 +28,7 @@ static GVBackendService *service = nil;
 
 - (NSArray <GVPost *> *)activityFeed {
 
-    GVPost *post1 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_1.mp4"] title:@"Collab" postText:@"Love this"];
+    GVPost *post1 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_1.mp4"] title:nil postText:@"Duet with CYcology. (Blackbear- IDFC) ❤"];
     post1.username = @"AshleyStrongarm";
     post1.loopCount = @"2,251,499";
     post1.postDate = @"1/13/16";
@@ -37,7 +37,7 @@ static GVBackendService *service = nil;
     post1.commentCount = @"184";
     post1.externalLinkCount = @"1.1k";
     
-    GVPost *post2 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_2.mp4"] title:@"Control" postText:nil];
+    GVPost *post2 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_2.mp4"] title:nil postText:@"The Control"];
     post2.username = @"Luke Berti";
     post2.loopCount = @"3,134,188";
     post2.postDate = @"6/4/15";
@@ -47,7 +47,7 @@ static GVBackendService *service = nil;
     post2.externalLinkCount = @"2.3k";
     
     
-    GVPost *post3 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_3.mp4"] title:@"Alwyas No. 2" postText:nil];
+    GVPost *post3 = [GVPost postWithVideoURL:[GVUtil videoUrlForVideoName:@"/gv_3.mp4"] title:nil postText:@"IM YOUR NUMBER 2 PENCIL BOY"];
     post3.username = @"Nicholas Megalis";
     post3.loopCount = @"3,244";
     post3.postDate = @"17h";

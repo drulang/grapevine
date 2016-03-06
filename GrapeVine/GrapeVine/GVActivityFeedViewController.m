@@ -100,6 +100,7 @@
     cell.headerView.infoTitleLabel.text = post.loopCount;
     cell.headerView.subtitleLabel.text = post.postDate;
     
+    cell.footerView.descriptionLabel.text = post.postText;
     cell.footerView.action1View.titleLabel.text = post.likeCount;
     cell.footerView.action2View.titleLabel.text = post.commentCount;
     cell.footerView.action3View.titleLabel.text = post.externalLinkCount;
