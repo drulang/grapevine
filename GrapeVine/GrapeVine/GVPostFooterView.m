@@ -75,6 +75,7 @@
         
         [_additionalActionsButton setImage:iconImage forState:UIControlStateNormal];
         _additionalActionsButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        _additionalActionsButton.imageEdgeInsets = UIEdgeInsetsMake(5, 0, 5, 0);
         _additionalActionsButton.tintColor = [UIColor lightGrayColor];
     }
     return _additionalActionsButton;
@@ -104,6 +105,7 @@
 - (void)updateConstraints {
     if (!_constraintsAdded) {
         CGFloat defaultPadding = 8;
+        CGFloat defaultActionViewPadding = 16;
         
         [self.descriptionLabel autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(defaultPadding, defaultPadding, 0, defaultPadding) excludingEdge:ALEdgeBottom];
         
@@ -112,20 +114,20 @@
         
         [self.action1View autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.descriptionLabel];
         [self.action1View autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.descriptionActionButton withOffset:12];
-        [self.action1View autoSetDimension:ALDimensionHeight toSize:20];
+        [self.action1View autoSetDimension:ALDimensionHeight toSize:GVActionViewPreferredHeight];
         
-        [self.action2View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action1View withOffset:defaultPadding];
+        [self.action2View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action1View withOffset:defaultActionViewPadding];
         [self.action2View autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
         [self.action2View autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.action1View];
         
-        [self.action3View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action2View withOffset:defaultPadding];
+        [self.action3View autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.action2View withOffset:defaultActionViewPadding];
         [self.action3View autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
         [self.action3View autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.action1View];
         
         [self.additionalActionsButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:defaultPadding];
         [self.additionalActionsButton autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.action1View];
         [self.additionalActionsButton autoSetDimension:ALDimensionHeight toSize:self.action1View.intrinsicContentSize.height];
-        [self.additionalActionsButton autoSetDimension:ALDimensionWidth toSize:self.action1View.intrinsicContentSize.width];
+        [self.additionalActionsButton autoSetDimension:ALDimensionWidth toSize:self.action1View.intrinsicContentSize.width / 2.0];
         
         _constraintsAdded = YES;
     }

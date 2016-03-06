@@ -41,7 +41,7 @@
     if (!_titleLabel) {
         _titleLabel = [UILabel autolayoutView];
         _titleLabel.text = @"Title";
-        _titleLabel.font = [UIFont systemFontOfSize:13];
+        _titleLabel.font = [UIFont boldSystemFontOfSize:12];
     }
     return _titleLabel;
 }
@@ -51,6 +51,7 @@
         _subtitleLabel = [UILabel autolayoutView];
         _subtitleLabel.text = @"Subtitle";
         _subtitleLabel.font = [UIFont systemFontOfSize:9];
+        _subtitleLabel.textColor = [UIColor lightGrayColor];
     }
     return _subtitleLabel;
 }
@@ -69,6 +70,7 @@
         _infoSubtitleLabel = [UILabel autolayoutView];
         _infoSubtitleLabel.text = @"Info SubTitle";
         _infoSubtitleLabel.font = self.subtitleLabel.font;
+        _infoSubtitleLabel.textColor = self.subtitleLabel.textColor;
     }
     return _infoSubtitleLabel;
 }
@@ -104,16 +106,17 @@
 - (void)updateConstraints {
     
     if (!_contraintsAdded) {
-        int imageViewInset = 5;
+        int imageViewInset = 9;
         
         [self.imageView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsMake(imageViewInset, imageViewInset, imageViewInset, imageViewInset) excludingEdge:ALEdgeRight];
         [self.imageView autoMatchDimension:ALDimensionWidth toDimension:ALDimensionHeight ofView:self.imageView];
         
         [self.titleLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:self.imageView withOffset:8];
-        [self.titleLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.imageView];
+        [self.titleLabel autoConstrainAttribute:ALAttributeBottom toAttribute:ALAttributeMarginAxisVertical ofView:self.imageView withOffset:0
+         ];
         
         [self.subtitleLabel autoPinEdge:ALEdgeLeft toEdge:ALEdgeLeft ofView:self.titleLabel];
-        [self.subtitleLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.titleLabel withOffset:3];
+        [self.subtitleLabel autoPinEdge:ALEdgeBottom toEdge:ALEdgeBottom ofView:self.imageView];
         
         [self.infoTitleLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeTop ofView:self.titleLabel];
         [self.infoTitleLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:10];

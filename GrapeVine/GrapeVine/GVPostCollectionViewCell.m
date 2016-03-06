@@ -72,7 +72,7 @@
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeRight];
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
-        [self.headerView autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeHeight ofView:self.contentView withMultiplier:.10];
+        [self.headerView autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeHeight ofView:self.contentView withMultiplier:.09];
         
         [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeLeft];
         [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeRight];
