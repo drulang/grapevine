@@ -65,6 +65,9 @@
         [self.layer addSublayer:self.playerLayer];
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(videoPlayerTapped:)];
+        [self addGestureRecognizer:tap];
     }
     
     return self;
@@ -103,6 +106,16 @@
     NSLog(@"Player reached end of video. Restarting");
     
     [self.player insertItem:self.videoItem afterItem:nil];
+}
+
+#pragma mark Target/Action
+
+- (void)videoPlayerTapped:(UITapGestureRecognizer *)tap {
+    if (self.status == GVVideoPlayerPlaying) {
+        [self pause];
+    } else {
+        [self play];
+    }
 }
 
 @end
