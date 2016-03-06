@@ -14,6 +14,8 @@
 
 @property (nonatomic)UIView *contentView;
 @property (nonatomic, readwrite)UIView *tabBarView;
+@property (nonatomic)NSArray <UIButton *> *tabBarButtons;
+@property (nonatomic)NSArray *tabBarButtonConstraints;
 
 @end
 
@@ -53,7 +55,7 @@
         [self addChildViewController:vc];
         [vc didMoveToParentViewController:self];
     }
-    
+    [self layoutTabBarButtons];
     [self transitionToSelectedIndex];
 }
 
@@ -68,6 +70,7 @@
     
     [self transitionToSelectedIndex];
 }
+
 
 #pragma mark Lifecycle
 
@@ -106,6 +109,46 @@
     [self.contentView addSubview:vc.view];
     
     vc.view.frame = self.contentView.bounds;
+}
+
+- (void)layoutTabBarButtons {
+    // Remove old buttons
+    for (UIButton *button in self.tabBarButtons) {
+        [button removeFromSuperview];
+    }
+    
+    CGFloat tabBarButtonWidth = self.view.frame.size.width / self.viewControllers.count;
+    
+    NSMutableArray *buttons = [NSMutableArray new];
+    for (UIViewController *vc in self.viewControllers) {
+        UIButton *button = [UIButton autolayoutView];
+        button.backgroundColor = [UIColor purpleColor];
+        [button setImage:vc.tabBarItem.image forState:UIControlStateNormal];
+  
+        [buttons addObject:button];
+        [self.tabBarView addSubview:button];
+    }
+    
+    self.tabBarButtons = [buttons copy];
+    
+    [self.view removeConstraints:self.tabBarButtonConstraints];
+    
+    self.tabBarButtonConstraints = [NSLayoutConstraint autoCreateAndInstallConstraints:^{
+        UIButton *previousButton;
+        for (UIButton *button in self.tabBarButtons) {
+            [button autoPinEdgeToSuperviewEdge:ALEdgeTop];
+            [button autoPinEdgeToSuperviewEdge:ALEdgeBottom];
+            [button autoSetDimension:ALDimensionWidth toSize:tabBarButtonWidth];
+            
+            if (!previousButton) {
+                [button autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+            } else {
+                [button autoPinEdge:ALEdgeLeft toEdge:ALEdgeRight ofView:previousButton];
+            }
+            
+            previousButton = button;
+        }
+    }];
 }
 
 @end
