@@ -19,6 +19,9 @@
 @property (nonatomic)NSArray <UIButton *> *tabBarButtons;
 @property (nonatomic)NSArray *tabBarButtonConstraints;
 
+#warning (DL) Rework this into a GVTabBarButton
+@property (nonatomic)UIButton *actionButton;
+
 @end
 
 @implementation GVTabBarController {
@@ -39,8 +42,18 @@
     if (!_tabBarView) {
         _tabBarView = [UIView autolayoutView];
         _tabBarView.backgroundColor = [UIColor colorWithRed:53/255.0 green:53/255.0 blue:52/255.0 alpha:1];
+        [_tabBarView addSubview:self.actionButton];
     }
     return _tabBarView;
+}
+
+- (UIButton *)actionButton {
+    if (!_actionButton) {
+        _actionButton = [UIButton autolayoutView];
+        _actionButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
+        [_actionButton setImage:[UIImage imageNamed:@"icon_videocamera"] forState:UIControlStateNormal];
+    }
+    return _actionButton;
 }
 
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
@@ -78,7 +91,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor whiteColor];å
     
     [self.view addSubview:self.contentView];
     [self.view addSubview:self.tabBarView];
@@ -94,8 +108,14 @@
         [self.tabBarView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeTop];
         [self.tabBarView autoSetDimension:ALDimensionHeight toSize:40];
         
-        [self.contentView autoPinEdgesToSuperviewEdgesWithInsets:UIEdgeInsetsZero excludingEdge:ALEdgeBottom];
+        [self.contentView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.contentView autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.contentView autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
         [self.contentView autoPinEdge:ALEdgeBottom toEdge:ALEdgeTop ofView:self.tabBarView];
+        
+        [self.actionButton autoCenterInSuperview];
+        [self.actionButton autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:5];
+        [self.actionButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
         
         _addedConstraints = YES;
     }
@@ -132,7 +152,6 @@
         if (i == self.selectedIndex)
             button.tintColor = [UIColor whiteColor];
 
-        
         [self.tabBarView addSubview:button];
     }
     
