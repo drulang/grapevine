@@ -93,11 +93,17 @@
     GVPostCollectionViewCell *cell = (GVPostCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:GVPostCollectionViewCellIdentifier forIndexPath:indexPath];
     
     GVPost *post = [self.posts objectAtIndex:indexPath.row];
+    
     cell.headerView.titleLabel.text = post.username;
     cell.headerView.imageView.image = [UIImage imageNamed:post.profileImageName];
     cell.headerView.infoSubtitleLabel.text = @"Loops";
     cell.headerView.infoTitleLabel.text = post.loopCount;
     cell.headerView.subtitleLabel.text = post.postDate;
+    
+    cell.footerView.action1View.titleLabel.text = post.likeCount;
+    cell.footerView.action2View.titleLabel.text = post.commentCount;
+    cell.footerView.action3View.titleLabel.text = post.externalLinkCount;
+    
     cell.videoPlayer.videoURL = post.videoURL;
     
     return cell;

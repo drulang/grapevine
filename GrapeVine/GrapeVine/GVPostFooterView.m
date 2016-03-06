@@ -75,7 +75,7 @@
         
         [_additionalActionsButton setImage:iconImage forState:UIControlStateNormal];
         _additionalActionsButton.imageView.contentMode = UIViewContentModeScaleAspectFit;
-        _additionalActionsButton.imageEdgeInsets = UIEdgeInsetsMake(5, 0, 5, 0);
+        _additionalActionsButton.imageEdgeInsets = UIEdgeInsetsMake(2, 0, 2, 0);
         _additionalActionsButton.tintColor = [UIColor lightGrayColor];
     }
     return _additionalActionsButton;
