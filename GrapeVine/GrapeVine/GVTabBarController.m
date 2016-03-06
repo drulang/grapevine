@@ -40,7 +40,33 @@
 }
 
 - (void)setViewControllers:(NSArray<UIViewController *> *)viewControllers {
+    // Remove previous child controllers
+    for (UIViewController *vc in _viewControllers) {
+        [vc.view removeFromSuperview];
+        [vc removeFromParentViewController];
+        [vc didMoveToParentViewController:nil];
+    }
+    
     _viewControllers = viewControllers;
+    
+    for (UIViewController *vc in _viewControllers) {
+        [self addChildViewController:vc];
+        [vc didMoveToParentViewController:self];
+    }
+    
+    [self transitionToSelectedIndex];
+}
+
+- (void)setSelectedIndex:(NSInteger)selectedIndex {
+    _selectedIndex = selectedIndex;
+    
+    if (_selectedIndex >= self.viewControllers.count) {
+        _selectedIndex = self.viewControllers.count - 1;
+    } else if (_selectedIndex <= 1) {
+        _selectedIndex = 0;
+    }
+    
+    [self transitionToSelectedIndex];
 }
 
 #pragma mark Lifecycle
@@ -55,7 +81,7 @@
     [self.view setNeedsUpdateConstraints];
 }
 
-#pragma mark PL Extensions
+#pragma mark PureLayout Extensions
 
 - (void)updateViewConstraints {
     if (!_addedConstraints) {
@@ -70,6 +96,16 @@
     }
     
     [super updateViewConstraints];
+}
+
+#pragma mark Helpers
+
+- (void)transitionToSelectedIndex {
+    UIViewController *vc = [self.viewControllers objectAtIndex:self.selectedIndex];
+    
+    [self.contentView addSubview:vc.view];
+    
+    vc.view.frame = self.contentView.bounds;
 }
 
 @end
