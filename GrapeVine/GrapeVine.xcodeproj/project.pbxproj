@@ -15,6 +15,7 @@
 		71D832D61C8C76130030808B /* GVVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D51C8C76130030808B /* GVVideoPlayer.m */; };
 		71D832DA1C8C87C50030808B /* GVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D91C8C87C50030808B /* GVUtil.m */; };
 		71D832DE1C8C98150030808B /* GVTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832DD1C8C98150030808B /* GVTabBarButton.m */; };
+		71D832E41C8CDFC00030808B /* GVVideoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832E31C8CDFC00030808B /* GVVideoService.m */; };
 		71F98F101C83955600FE106B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F0F1C83955600FE106B /* main.m */; };
 		71F98F131C83955600FE106B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F121C83955600FE106B /* AppDelegate.m */; };
 		71F98F1B1C83955600FE106B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1A1C83955600FE106B /* Assets.xcassets */; };
@@ -44,6 +45,8 @@
 		71D832D91C8C87C50030808B /* GVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUtil.m; sourceTree = "<group>"; };
 		71D832DC1C8C98150030808B /* GVTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVTabBarButton.h; sourceTree = "<group>"; };
 		71D832DD1C8C98150030808B /* GVTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVTabBarButton.m; sourceTree = "<group>"; };
+		71D832E21C8CDFC00030808B /* GVVideoService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVVideoService.h; sourceTree = "<group>"; };
+		71D832E31C8CDFC00030808B /* GVVideoService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVVideoService.m; sourceTree = "<group>"; };
 		71F98F0B1C83955600FE106B /* GrapeVine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeVine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F98F0F1C83955600FE106B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71F98F111C83955600FE106B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -223,6 +226,8 @@
 			children = (
 				71F98F331C8398F600FE106B /* GVBackendService.h */,
 				71F98F341C8398F600FE106B /* GVBackendService.m */,
+				71D832E21C8CDFC00030808B /* GVVideoService.h */,
+				71D832E31C8CDFC00030808B /* GVVideoService.m */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -366,6 +371,7 @@
 				71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */,
 				71D832D01C8B9B2C0030808B /* GVPostFooterView.m in Sources */,
 				71F98F301C83976D00FE106B /* GVActivityFeedViewController.m in Sources */,
+				71D832E41C8CDFC00030808B /* GVVideoService.m in Sources */,
 				71F98F131C83955600FE106B /* AppDelegate.m in Sources */,
 				71F98F351C8398F600FE106B /* GVBackendService.m in Sources */,
 				71D832C81C8B38720030808B /* GVPostHeaderView.m in Sources */,
