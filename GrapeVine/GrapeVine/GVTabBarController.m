@@ -92,7 +92,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor whiteColor];å
+    self.view.backgroundColor = [UIColor whiteColor];
     
     [self.view addSubview:self.contentView];
     [self.view addSubview:self.tabBarView];
