@@ -20,8 +20,7 @@
 - (UILabel *)descriptionLabel {
     if (!_descriptionLabel) {
         _descriptionLabel = [UILabel autolayoutView];
-        _descriptionLabel.text = @"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500";
-        _descriptionLabel.font = [UIFont systemFontOfSize:12];
+        _descriptionLabel.font = [UIFont systemFontOfSize:13];
         _descriptionLabel.numberOfLines = 0;
     }
     return _descriptionLabel;
@@ -31,7 +30,7 @@
     if (!_descriptionActionButton) {
         _descriptionActionButton = [UIButton autolayoutView];
         [_descriptionActionButton setTitle:@"People also watched >" forState:UIControlStateNormal];
-        _descriptionActionButton.titleLabel.font = [UIFont systemFontOfSize:9];
+        _descriptionActionButton.titleLabel.font = [UIFont systemFontOfSize:11];
         [_descriptionActionButton setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
     }
     return _descriptionActionButton;
