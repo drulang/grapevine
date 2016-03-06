@@ -14,6 +14,7 @@
 		71D832D31C8B9BE90030808B /* GVActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D21C8B9BE90030808B /* GVActionView.m */; };
 		71D832D61C8C76130030808B /* GVVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D51C8C76130030808B /* GVVideoPlayer.m */; };
 		71D832DA1C8C87C50030808B /* GVUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832D91C8C87C50030808B /* GVUtil.m */; };
+		71D832DE1C8C98150030808B /* GVTabBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 71D832DD1C8C98150030808B /* GVTabBarButton.m */; };
 		71F98F101C83955600FE106B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F0F1C83955600FE106B /* main.m */; };
 		71F98F131C83955600FE106B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 71F98F121C83955600FE106B /* AppDelegate.m */; };
 		71F98F1B1C83955600FE106B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71F98F1A1C83955600FE106B /* Assets.xcassets */; };
@@ -41,6 +42,8 @@
 		71D832D51C8C76130030808B /* GVVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVVideoPlayer.m; sourceTree = "<group>"; };
 		71D832D81C8C87C50030808B /* GVUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVUtil.h; sourceTree = "<group>"; };
 		71D832D91C8C87C50030808B /* GVUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVUtil.m; sourceTree = "<group>"; };
+		71D832DC1C8C98150030808B /* GVTabBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GVTabBarButton.h; sourceTree = "<group>"; };
+		71D832DD1C8C98150030808B /* GVTabBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GVTabBarButton.m; sourceTree = "<group>"; };
 		71F98F0B1C83955600FE106B /* GrapeVine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeVine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71F98F0F1C83955600FE106B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		71F98F111C83955600FE106B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -117,6 +120,15 @@
 			name = Misc;
 			sourceTree = "<group>";
 		};
+		71D832DB1C8C98030030808B /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				71D832DC1C8C98150030808B /* GVTabBarButton.h */,
+				71D832DD1C8C98150030808B /* GVTabBarButton.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
 		71F98F021C83955600FE106B = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +155,7 @@
 				71F98F321C8398E000FE106B /* Service */,
 				71F98F271C8396F200FE106B /* Model */,
 				71F98F261C8396EC00FE106B /* View */,
+				71D832DB1C8C98030030808B /* Controls */,
 				71F98F251C8396E400FE106B /* Controllers */,
 				71F98F1A1C83955600FE106B /* Assets.xcassets */,
 				71F98F0E1C83955600FE106B /* Supporting Files */,
@@ -346,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D832DE1C8C98150030808B /* GVTabBarButton.m in Sources */,
 				71D832D61C8C76130030808B /* GVVideoPlayer.m in Sources */,
 				71D832CD1C8B94A20030808B /* UIView+Util.m in Sources */,
 				71F98F2D1C83973D00FE106B /* GVTabBarController.m in Sources */,

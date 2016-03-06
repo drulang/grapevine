@@ -8,6 +8,8 @@
 #import "PureLayout.h"
 #import "UIView+Util.h"
 
+#import "GVTabBarButton.h"
+
 #import "GVTabBarController.h"
 
 @interface GVTabBarController ()
@@ -120,12 +122,17 @@
     CGFloat tabBarButtonWidth = self.view.frame.size.width / self.viewControllers.count;
     
     NSMutableArray *buttons = [NSMutableArray new];
-    for (UIViewController *vc in self.viewControllers) {
-        UIButton *button = [UIButton autolayoutView];
-        button.backgroundColor = [UIColor purpleColor];
+    for (int i = 0; i < self.viewControllers.count; i++) {
+        UIViewController *vc = self.viewControllers[i];
+        GVTabBarButton *button = [GVTabBarButton autolayoutView];
+        
         [button setImage:vc.tabBarItem.image forState:UIControlStateNormal];
-  
         [buttons addObject:button];
+        
+        if (i == self.selectedIndex)
+            button.tintColor = [UIColor whiteColor];
+
+        
         [self.tabBarView addSubview:button];
     }
     

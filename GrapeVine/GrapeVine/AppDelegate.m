@@ -13,35 +13,55 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic)GVTabBarController *tabBarController;
+
 @end
 
 @implementation AppDelegate
 
+#pragma mark Properties
+
+- (GVTabBarController *)tabBarController {
+    if (!_tabBarController) {
+        GVActivityFeedViewController *viewController = [[GVActivityFeedViewController alloc] init];
+        viewController.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"icon_home"] tag:0];
+        
+        UIViewController *vc2 = [UIViewController new];
+        vc2.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"icon_search"] tag:0];
+        vc2.view.backgroundColor = [UIColor greenColor];
+        
+        UIViewController *vc3 = [UIViewController new];
+        vc3.view.backgroundColor = [UIColor greenColor];
+        
+        UIViewController *vc4 = [UIViewController new];
+        vc4.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"icon_alert"] tag:0];
+        vc4.view.backgroundColor = [UIColor greenColor];
+        
+        UIViewController *vc5 = [UIViewController new];
+        vc5.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"" image:[UIImage imageNamed:@"icon_profile"] tag:0];
+        vc5.view.backgroundColor = [UIColor greenColor];
+        
+        _tabBarController = [[GVTabBarController alloc] init];
+        _tabBarController.viewControllers = @[
+                                             viewController,
+                                             vc2,
+                                             vc3,
+                                             vc4,
+                                             vc5,
+                                             ];
+    }
+    
+    return _tabBarController;
+}
+
+#pragma mark App Delegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    
-    GVActivityFeedViewController *viewController = [[GVActivityFeedViewController alloc] init];
-    UIViewController *vc2 = [UIViewController new];
-    vc2.view.backgroundColor = [UIColor greenColor];
-    UIViewController *vc3 = [UIViewController new];
-    vc3.view.backgroundColor = [UIColor greenColor];
-    UIViewController *vc4 = [UIViewController new];
-    vc4.view.backgroundColor = [UIColor greenColor];
-
-    GVTabBarController *tabBarController = [[GVTabBarController alloc] init];
-    tabBarController.viewControllers = @[
-                                         viewController,
-                                         vc2,
-                                         vc3,
-                                         vc4,
-                                         ];
-    
-    self.window.rootViewController = tabBarController;
+    self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
-    
     
     return YES;
 }
