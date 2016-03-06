@@ -9,8 +9,7 @@
 #import "PureLayout.h"
 #import "UIView+Util.h"
 
-#import "GVPostHeaderView.h"
-#import "GVPostFooterView.h"
+
 
 #import "GVPostCollectionViewCell.h"
 
@@ -20,11 +19,6 @@
 @interface GVPostCollectionViewCell () {
     BOOL _constraintsAdded;
 }
-
-@property (nonatomic)GVPostHeaderView *headerView;
-@property (nonatomic)GVPostFooterView *footerView;
-
-@property (nonatomic)AVPlayerLayer *playerLayer;
 
 @end
 
@@ -44,6 +38,18 @@
     return _headerView;
 }
 
+- (GVVideoPlayer *)videoPlayer {
+    if (!_videoPlayer) {
+        _videoPlayer = [GVVideoPlayer autolayoutView];
+
+        NSString *filename = [NSString stringWithFormat:@"/gv_1.mp4"];
+        NSString *urlString = [[[NSBundle mainBundle] resourcePath] stringByAppendingString:filename];
+        NSURL *url = [NSURL fileURLWithPath:urlString];
+        [_videoPlayer playVideo:url];
+    }
+    return _videoPlayer;
+}
+
 - (GVPostFooterView *)footerView {
     if (!_footerView) {
         _footerView = [GVPostFooterView autolayoutView];
@@ -59,6 +65,7 @@
     
     if (self) {
         [self.contentView addSubview:self.headerView];
+        [self.contentView addSubview:self.videoPlayer];
         [self.contentView addSubview:self.footerView];
     }
     
@@ -68,11 +75,14 @@
 - (void)updateConstraints {
     if (!_constraintsAdded) {
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeLeft];
-        [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
         [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeRight];
-        [self.headerView autoSetDimension:ALDimensionHeight toSize:50];
+        [self.headerView autoPinEdgeToSuperviewEdge:ALEdgeTop];
+        [self.headerView autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeHeight ofView:self.contentView withMultiplier:.10];
         
-        
+        [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeLeft];
+        [self.videoPlayer autoPinEdgeToSuperviewEdge:ALEdgeRight];
+        [self.videoPlayer autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.headerView];
+        [self.videoPlayer autoConstrainAttribute:ALAttributeHeight toAttribute:ALAttributeHeight ofView:self.contentView withMultiplier:.65];
         
         _constraintsAdded = YES;
     }
