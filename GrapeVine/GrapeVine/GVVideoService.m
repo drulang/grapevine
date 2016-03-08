@@ -23,4 +23,12 @@ static GVVideoService *service = nil;
     return service;
 }
 
+#pragma mark Public Methods
+
+- (void)processVideoFile:(NSURL *)videoURL forTag:(NSInteger)tag completion:(void (^)(NSInteger, NSURL *))completionBlock {
+    if (completionBlock) {
+        completionBlock(tag, videoURL);
+    }
+}
+
 @end

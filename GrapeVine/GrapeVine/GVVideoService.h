@@ -12,4 +12,6 @@
 
 + (instancetype)sharedService;
 
+- (void)processVideoFile:(NSURL *)videoURL forTag:(NSInteger)tag completion:(void (^)(NSInteger tag, NSURL *url))completionBlock;
+
 @end

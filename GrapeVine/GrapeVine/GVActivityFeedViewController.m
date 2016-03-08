@@ -8,6 +8,7 @@
 
 // Service
 #import "GVBackendService.h"
+#import "GVVideoService.h"
 
 // Views
 #import "GVPostCollectionViewCell.h"
@@ -104,8 +105,10 @@
     cell.footerView.action1View.titleLabel.text = post.likeCount;
     cell.footerView.action2View.titleLabel.text = post.commentCount;
     cell.footerView.action3View.titleLabel.text = post.externalLinkCount;
-    
-    cell.videoPlayer.videoURL = post.videoURL;
+
+    [[GVVideoService sharedService] processVideoFile:post.videoURL forTag:indexPath.row completion:^(NSInteger tag, NSURL *url) {
+        cell.videoPlayer.videoURL = post.videoURL;
+    }];
     
     return cell;
 }
@@ -125,7 +128,7 @@
             NSIndexPath *cell1_indexPath = [self.collectionView indexPathForCell:cell1];
             CGRect cell1_frame = [self.collectionView layoutAttributesForItemAtIndexPath:cell1_indexPath].frame;
 
-            GVPostCollectionViewCell *cell2 = cell;
+            GVPostCollectionViewCell *cell2 = (GVPostCollectionViewCell *)cell;
             NSIndexPath *cell2_indexPath = [self.collectionView indexPathForCell:cell2];
             CGRect cell2_frame = [self.collectionView layoutAttributesForItemAtIndexPath:cell2_indexPath].frame;
             
