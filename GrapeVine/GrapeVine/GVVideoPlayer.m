@@ -64,7 +64,7 @@
     
         [self.layer addSublayer:self.playerLayer];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
+
         
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(videoPlayerTapped:)];
         [self addGestureRecognizer:tap];
@@ -93,11 +93,13 @@
 - (void)play {
     self.status = GVVideoPlayerPlaying;
     [self.player play];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playerDidReachEnd:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
 }
 
 - (void)pause {
     self.status = GVVideoPlayerPaused;
     [self.player pause];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark Player Notifications
