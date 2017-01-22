@@ -5,6 +5,7 @@
 //  Created by Dru Lang on 3/6/16.
 //  Copyright © 2016 Dru Lang. All rights reserved.
 //
+#import <AVFoundation/AVFoundation.h>
 
 #import "GVVideoService.h"
 
@@ -27,6 +28,10 @@ static GVVideoService *service = nil;
 
 - (void)processVideoFile:(NSURL *)videoURL forTag:(NSInteger)tag completion:(void (^)(NSInteger, NSURL *))completionBlock {
     if (completionBlock) {
+        
+        NSString *outputFilename = @"output.mp4";
+        NSURL *outputURL = [NSURL fileURLWithPath:outputFilename];
+        
         completionBlock(tag, videoURL);
     }
 }

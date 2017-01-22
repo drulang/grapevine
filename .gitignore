@@ -51,3 +51,9 @@ Carthage/Build
 
 fastlane/report.xml
 fastlane/screenshots
+
+*.lock
+Pods
+.DS_Store
+
+*workspace
